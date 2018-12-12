@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %}
+<title>Home</title>
+{% endblock %} {% block body %}
+
+
+<div class="head-section">
+
+    <div class="about-left">
+
+        <center>
+            <h3>Welcome to the Programmer's Ebook Hub.</h3>
+            <h5>Learn and improve your skill of developing App's. Enjoy learning and develpoing your loving app.
+            </h5>
+
+            <div class="button-box">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'dash' %}" class='btn btn-dash btn-rounded waves-effect waves-light'>Goto Dashboard</a>
+                {% else %}
+                <a href="{% url 'signin' %}" class='btn btn-login btn-rounded waves-effect waves-light'>login</a>
+                <a href="{% url 'signup' %}" class='btn btn-register btn-rounded waves-effect waves-light'>Register</a>
+                {% endif %}
+
+            </div>
+        </center>
+    </div>
+    <div class="about-right">
+        {% if request.user.is_authenticated %}
+        <h3>{{ request.user}}</h3>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block title %}
+<title>User Registration</title>
+{% endblock %} {% block body %} 
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+<div class="section">
+
+
+
+    <center>
+
+        <div class="form-box">
+            <h2>Signup Form</h2>
+            <hr>
+            <div class="form text-center  pt-4 pb-2 ">
+
+                <form method="post">
+                    {% csrf_token %} {% for field in form %}
+
+                    <div class="md-form">
+                        {{ field }} {{ field.label_tag }} {% for error in field.errors %}
+                        <small id="" class="form-text text-muted">
+                            {{ error }}
+                        </small>{% endfor %}
+                    </div>
+                    {% endfor %}
+
+                    <button type="submit" class='btn btn-register btn-rounded waves-effect waves-light'>Sign up</button>
+                    <hr>
+                    <!-- login -->
+                    <p>Already a member?
+                        <a href="#">Login now</a>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </center>
+
+
+    {% endblock %} {% block model %} {% if success %}
+    <script>
+        swal({
+                title: "Registration Successfull !",
+                text: "your account has been created !",
+                icon: "success",
+                button: "done",
+            })
+            .then((value) => {
+                if (value == true)
+                    location.href = '/dash'
+            });
+    </script>
+    {% endif %} {% endblock %}

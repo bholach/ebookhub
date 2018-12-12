@@ -1,0 +1,242 @@
+body {
+    width: 100vw !important;
+}
+
+.row {
+    margin-right: 0px !important;
+}
+
+.head-section {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    color: #ffffff;
+    text-align: center;
+    align-items: center;
+}
+
+.full-page-container {
+    background: url(../img/cc.jpg) no-repeat;
+    background-size: cover;
+    padding: 3% 10%;
+    min-height: 100vh;
+}
+
+.base-container {
+    border-radius: 20px;
+    background-color: rgba(66, 65, 65, 0.8);
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.section {
+    display: grid;
+    height: auto;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-register {
+    background: rgba(7, 211, 160, 0.342);
+}
+
+.btn-login {
+    background: rgb(255, 255, 255, 0.2);
+}
+
+.btn-dash {
+    background: rgba(4, 103, 184, 0.2);
+}
+
+.dark-color {
+    background-color: rgba(3, 23, 80, 0);
+    border-radius: 20px 20px 0 0px !important;
+}
+
+.current {
+    border-bottom: 2px solid #dddbdb !important;
+    transform: .3s;
+}
+
+.footer {
+    height: 5vh;
+    border-top: 1px solid rgb(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 100%;
+    margin-top: 20px;
+    position: absolute;
+    text-align: center;
+    border-radius: 0 0px 20px 20px !important;
+    bottom: 0;
+}
+
+hr {
+    color: #ffffff;
+    /* background: linear-gradient(45deg, rgb(192, 195, 196), rgba(183, 226, 215)); */
+    height: 6px;
+}
+
+.form-box {
+    min-width: 200px;
+    ;
+    max-width: 50%;
+    height: auto;
+    /* background: linear-gradient(45deg, rgba(173, 194, 202, 0.5), rgb(2, 88, 65, 0.1)); */
+    padding: 20px 10%;
+    margin: 10px;
+}
+
+/*---about css --*/
+
+/*-- login page -- */
+
+.form {
+    height: auto;
+}
+
+/*-- dash base --*/
+
+.header-section {
+    background: url(../img/cccc.png) no-repeat;
+    background-size: cover;
+    padding: 2%;
+    min-height: 100vh;
+}
+
+.dashbase-container {
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.5);
+    min-height: 80vh;
+    position: relative;
+}
+
+/*---- ebooks ---*/
+
+.ebook-box {
+    background: #000000;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #ffffff;
+    width: 220px;
+    height: 300px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.ebook-box:hover>.desc-box {
+    opacity: 1;
+    z-index: 12;
+    -webkit-transition: opacity .3s ease-in;
+    -moz-transition: opacity .3s ease-in;
+    -o-transition: opacity .3s ease-in;
+    -ms-transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
+}
+
+.tumbnail {
+    height: 101%;
+    width: 102%;
+    background-size: contain;
+    border-radius: 10px 10px 0 0;
+    margin-top: -2px;
+    background-repeat: no-repeat;
+}
+
+.desc-box {
+    position: absolute;
+    top: 0;
+    height: 101%;
+    width: 100%;
+    text-align: center;
+    text-align: start;
+    background: rgba(0, 0, 0, .8);
+    padding: 10px;
+    color: #ffffff;
+    opacity: 0;
+    z-index: -999;
+    /* opacity: 0; */
+}
+
+.desc {
+    transform: translate(5%, 20%);
+}
+
+.show_book_model {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    color: #ffffff;
+    z-index: 9999;
+    padding: 10px;
+    ;
+}
+
+.show_book_model>div>a {
+    font-size: 3.5rem;
+    margin-right: 20px 40px 0 0;
+}
+
+.model-body {
+    height: 88vh;
+    width: 100%;
+    background: #dddbdb;
+    overflow: auto;
+}
+
+.model-body embed {
+    width: 100vw;
+    height: 100%;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+/*-- media query --*/
+
+@media screen and (max-width:600px) {
+    .full-page-container {
+        padding: 10px 10px;
+    }
+    .ebook-box {
+        height: auto;
+        padding:0 0 5px 0px;
+    }
+    .desc-box {
+        position: relative;
+        height: auto;
+        padding: 0 10px;
+        opacity: 1;
+        text-align: start;
+        z-index: 999;
+    }
+    .tumbnail {
+        height: 35vh;
+    }
+    .desc {
+        transform: translate(0%, 0%);
+    }
+}
+
+@media screen and (max-width:340px) {
+    .head-section {
+        grid-template-columns: 1fr;
+    }
+    .ebook-box {
+        height: auto;
+        width: 80vw;
+        padding:0 0 5px 0px;
+    }
+}

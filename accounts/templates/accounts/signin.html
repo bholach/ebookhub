@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}
+<title>User Login</title>
+{% endblock %} {% block body %} 
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+<div class="section">
+
+    <center>
+        <div class="form-box">
+            <h2>SignIn Form</h2>
+            <hr>
+            <div class="form text-center  pt-4 pb-2 ">
+
+                <form method="post">
+                    {% csrf_token %}
+                    <small id="" class="form-text text-muted">
+                            {{ form.errors }}
+                        </small>
+                         {% for field in form %}
+
+                    <div class="md-form">
+                        {{ field }} {{ field.label_tag }}
+                        
+                    </div>
+                    {% endfor %}
+
+                    <button type="submit" class='btn btn-register btn-rounded waves-effect waves-light'>Sign In</button>
+                    <hr>
+                    <!-- login -->
+                    <p>Not a member?
+                        <a href="#">signup now</a>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </center>
+
+
+
+    {% endblock %}
