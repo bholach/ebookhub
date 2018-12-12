@@ -1,0 +1,56 @@
+{% extends 'dash-base.html' %} {% block title %}
+<title>Home</title>
+{% endblock %} {% block body %} {% load static %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1 style="margin-bottom: 10px;border-bottom:2px solid #323232;">Ebooks For {{ category_name }} Develpoment</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <!-- /.row -->
+            {% for ebook in ebooks %}
+            <p></p>
+            <div class="col">
+                <!-- small box -->
+                <div class="ebook-box">
+                    <img class="tumbnail" src="{{ MEDIA_URL }}/{{ ebook.thumnail }}">
+                    <div class="desc-box">
+                        <div class="desc">
+                            <h6 style="color:yellow;">{{ ebook.name }}</h6>
+                            <label>Author : {{ ebook.author }}</label>
+                            <label>Pages : {{ ebook.pages }}</label>
+                            <label>Language : {{ ebook.language }}</label>
+                            <a href="{% url 'show_book' %}{{ ebook.id }}" class="btn btn-round btn-info btn-outline small-box-footer">Read now
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Main row -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+    <div class="show_book_model">
+        <div class="head">
+            <h1 id="book_name" style="display:inline-block;">book name</h1>
+            <a href="#" style="float:right;">X</a>
+        </div>
+        <div class="model-body" id="test">
+
+            <!-- <img scr="{{ MEDIA_URL }}/ebooks/Think_Like_a_Data_Scientist.pdf"> -->
+            <!-- <iframe width='1000' height='800' src='{{ MEDIA_URL }}/ebooks/Think_Like_a_Data_Scientist.pdf' frameborder='0' allowfullscreen></iframe> -->
+            <!-- <embed src="{{ MEDIA_URL }}/ebooks/Think_Like_a_Data_Scientist.pdf" type='application/pdf'> -->
+        </div>
+    </div>
+
+    {% endblock %}

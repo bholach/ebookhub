@@ -1,0 +1,41 @@
+{% extends 'dash-base.html' %} {% block title %}
+<title>Home</title>
+{% endblock %} {% block body %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1 style="margin-bottom: 10px;border-bottom:2px solid #323232;">Ebooks Categories</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <!-- /.row -->
+            {% for category in categories %}
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>65</h3>
+                        <p>{{ category.name }}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <a href="{% url 'category' %}{{ category.id }}" class="small-box-footer">View All
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Main row -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+
+    {% endblock %}
